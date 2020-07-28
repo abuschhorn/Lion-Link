@@ -15,10 +15,10 @@ export default function FeedForm ({addStatus}) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input className="form=control" value={userName} onChange={(event) => setUserName(event.target.value)} placeholder = "hello"/>
-                <input className="form=control" value={message} onChange={(event) => setMessage(event.target.value)} placeholder = "hello"/>
+                <input className="form-control" value={userName} onChange={(event) => setUserName(event.target.value)} placeholder = "hello"/>
+                <input className="form-control" value={message} onChange={(event) => setMessage(event.target.value)} placeholder = "hello"/>
                 
-                <button onClick={handleSubmit}>Update Status</button>
+                <button className = "btn btn-danger" onClick={handleSubmit}>Update Status</button>
             </form>
         </div>
     )

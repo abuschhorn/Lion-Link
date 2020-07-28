@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "@reach/router";
+import Schedule from "./Schedule"
 
 export default function PublicForm({ addProfile }) {
   const [fName, setFName] = useState("");
@@ -18,6 +19,11 @@ export default function PublicForm({ addProfile }) {
   const [diet, setDiet] = useState("");
   const [instagram, setInstagram] = useState("");
   const navigate = useNavigate();
+
+  const addClass = (newClass) => {
+      const newClasses = [...schedule, newClass]
+      setSchedule(newClasses)
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -58,7 +64,7 @@ export default function PublicForm({ addProfile }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <div onSubmit={handleSubmit}>
         {/* <p>Required: </p> */}
         <div className='row'>
           <div className='col-sm-6'>
@@ -141,11 +147,7 @@ export default function PublicForm({ addProfile }) {
           onChange={(event) => setInterest(event.target.value)}
         />
         <label>Class Schedule:</label>
-        <input
-          className='form-control'
-          value={schedule}
-          onChange={(event) => setSchedule(event.target.value)}
-        />
+        <Schedule addClass = {addClass}/>
         <h5>Optional:</h5>
         <label>Religion:</label>
 
@@ -187,12 +189,12 @@ export default function PublicForm({ addProfile }) {
         />
 
         <button
-          className='btn btn-success'
+          className='btn btn-danger'
           onClick={handleSubmit}>
           {" "}
           Add Your Profile{" "}
         </button>
-      </form>
+      </div>
     </div>
   );
 }

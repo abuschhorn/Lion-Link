@@ -15,13 +15,13 @@ export default function Navbar() {
         />
       </Link>
 
-      <ul class='navbar-nav'>
-        <li class='nav-item'>
+      <ul className='navbar-nav'>
+        <li className='nav-item'>
           <Link to='feed' className='nav-link'>
             Feed
           </Link>
         </li>
-        <li class='nav-item'>
+        <li className='nav-item'>
           <Link to='dashboard' className='nav-link'>
             Dashboard
           </Link>

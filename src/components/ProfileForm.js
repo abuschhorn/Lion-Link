@@ -56,8 +56,9 @@ export default function PublicForm ({addProfile})  {
                 {/* add pronouns */}
                 {/* <input className="form-control" value={pronouns} onChange={(event) => setPronouns(event.target.value)} placeholder="Pronouns"/> */}
                 <label for="select1">Pronouns: </label>
-                <select class="form-control" id="select1">
-                    <option>--Choose--</option>
+                <select class="form-control" id="select1" onChange={(event) => {
+                    setPronouns(event.target.value)}}>
+                    <option>Prefer Not to Say</option>
                     <option>she/her</option>
                     <option>he/him</option>
                     <option>they/them</option>

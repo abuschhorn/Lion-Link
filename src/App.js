@@ -8,14 +8,21 @@ import './App.css';
 function App() {
   const [profiles, setProfiles] = useState([
     {
-      fName: "Ashley"
-      // lName: "Buschhorn",
-      // city: "Austin",
-      // state: "TX",
-      // major: "CS",
-      // minor: "math",
-      // interest: ["film", "photography"],
-      // classes: ["CMSI 185", "MATH 248"]
+      fName: "Ashley",
+      lName: "Buschhorn",
+      pronouns: "she/her",
+      city: "Austin",
+      state: "TX",
+      major: "CS",
+      minor: "math",
+      interest: ["photography"],
+      schedule: ["CMSI 185", "MATH 248"],
+      religion: "Christian",
+      sexuality: "gay",
+      politics: "democrat",
+      astr: "cancer",
+      diet: null,
+      instagram: "@abuschhorn_19"
 
     }
   ])

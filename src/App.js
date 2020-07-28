@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import Profile from "./components/Profile"
-import ProfileForm from "./components/ProfileForm"
-import Navbar from "./components/Navbar"
-import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
+import React, { useState } from "react";
+import Profile from "./components/Profile";
+import ProfileForm from "./components/ProfileForm";
+import Navbar from "./components/Navbar";
+import Feed from "./components/Feed";
+import "./App.css";
+import { Router, Link } from "@reach/router";
 
 function App() {
   const [profiles, setProfiles] = useState([
@@ -23,31 +23,25 @@ function App() {
       politics: "democrat",
       astr: "cancer",
       diet: null,
-      instagram: "@abuschhorn_19"
-
-    }
-  ])
+      instagram: "@abuschhorn_19",
+    },
+  ]);
 
   const addProfile = (profile) => {
     const newProfiles = [...profiles, profile];
-    setProfiles(newProfiles)
-  }
- 
+    setProfiles(newProfiles);
+  };
+
   return (
-    <div className="container">
-      <Navbar/>
-     <h1 className="Title"> Lion-Link </h1>
-      <div className="row">
-      <div className="col-sm-4">
-      <Profile profiles={profiles}/>
-      </div>
-      <div className="col-sm-8">
-      <ProfileForm addProfile={addProfile}/>
+    <div className='container'>
+      <Navbar />
+      <Router>
+        <Profile profiles={profiles} path='dashboard' />
+        <ProfileForm addProfile={addProfile} path='/' />
+        <Feed path='feed' />
+      </Router>
     </div>
-    </div>
-    </div>
-    
   );
-  }
+}
 
 export default App;

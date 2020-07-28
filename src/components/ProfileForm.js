@@ -20,7 +20,7 @@ export default function PublicForm ({addProfile})  {
     const handleSubmit = (event) => {
         event.preventDefault();
         addProfile({fName: fName, lName: lName, pronouns: pronouns, city: city, state: state, 
-            major: major, mino: minor, interest: interest, schedule: schedule, religion: religion, sexuality: sexuality, 
+            major: major, minor: minor, interest: interest, schedule: schedule, religion: religion, sexuality: sexuality, 
             politics: politics, astr: astr, diet:diet, instagram: instagram})
         setFName('')
         setLName('')
@@ -46,14 +46,18 @@ export default function PublicForm ({addProfile})  {
             {/* <p>Required: </p> */}
                 <div className="row">
                     <div className="col-sm-6">
-                <input required className="form-control" value={fName} onChange={(event) => setFName(event.target.value)} placeholder="First Name"/>
+                <label>First Name:</label>
+                <input required className="form-control" value={fName} onChange={(event) => setFName(event.target.value)}/>
                 </div><div className="col-sm-6">
-                <input className="form-control" value={lName} onChange={(event) => setLName(event.target.value)} placeholder="Last Name"/>
+                <label>Last Name:</label>
+                <input className="form-control" value={lName} onChange={(event) => setLName(event.target.value)}/>
                 </div>
                 </div>
                 {/* add pronouns */}
-                <input className="form-control" value={pronouns} onChange={(event) => setPronouns(event.target.value)} placeholder="Pronouns"/>
-                <select class="form-control" id="exampleFormControlSelect1">
+                {/* <input className="form-control" value={pronouns} onChange={(event) => setPronouns(event.target.value)} placeholder="Pronouns"/> */}
+                <label for="select1">Pronouns: </label>
+                <select class="form-control" id="select1">
+                    <option>--Choose--</option>
                     <option>she/her</option>
                     <option>he/him</option>
                     <option>they/them</option>
@@ -62,31 +66,44 @@ export default function PublicForm ({addProfile})  {
                 <hr />
                 <div className="row">
                 <div className="col-sm-6">
-                <input className="form-control" value={city} onChange={(event) => setCity(event.target.value)} placeholder="City"/>
+                <label>City: </label>
+                <input className="form-control" value={city} onChange={(event) => setCity(event.target.value)}/>
                 </div><div className="col-sm-6">
-                <input className="form-control" value={state} onChange={(event) => setState(event.target.value)} placeholder="State"/>
+                    <label>State:</label>
+                <input className="form-control" value={state} onChange={(event) => setState(event.target.value)}/>
                 {/* add dropdown */}
                 </div>
                 </div>
                 <hr/>
                 <div className="row">
                 <div className="col-sm-6">
-                <input className="form-control" value={major} onChange={(event) => setMajor(event.target.value)} placeholder="Major"/> 
+                    <label>Major: </label>
+                <input className="form-control" value={major} onChange={(event) => setMajor(event.target.value)}/> 
                 </div><div className="col-sm-6">
-                <input className="form-control" value={minor} onChange={(event) => setMinor(event.target.value)} placeholder="Minors"/>
+                    <label>Minor:</label>
+                <input className="form-control" value={minor} onChange={(event) => setMinor(event.target.value)}/>
                 </div>
                 </div>
                 <hr/>
-                <input className="form-control" value={interest} onChange={(event) => setInterest(event.target.value)} placeholder="Interest"/>
-                <input className="form-control" value={schedule} onChange={(event) => setSchedule(event.target.value)} placeholder="Schedule"/>
-                <p>Optional:</p>
-                <input className="form-control" value={religion} onChange={(event) => setReligion(event.target.value)} placeholder="Religion"/>
-                <input className="form-control" value={sexuality} onChange={(event) => setSexuality(event.target.value)} placeholder="Sexuality"/>
+                <label>Interests:</label>
+                <input className="form-control" value={interest} onChange={(event) => setInterest(event.target.value)}/>
+                <label>Class Schedule:</label>
+                <input className="form-control" value={schedule} onChange={(event) => setSchedule(event.target.value)}/>
+                <h5>Optional:</h5>
+                <label>Religion:</label>
+
+                <input className="form-control" value={religion} onChange={(event) => setReligion(event.target.value)} />
+                <label>Sexuality:</label>
+                <input className="form-control" value={sexuality} onChange={(event) => setSexuality(event.target.value)} />
                 {/* lauren */}
-                <input className="form-control" value={politics} onChange={(event) => setPolitic(event.target.value)} placeholder="Political Affiliation"/>
-                <input className="form-control" value ={astr} onChange={(event) => setAstr(event.target.value)} placeholder="Astrological Sign"/>
-                <input className="form-control" value={diet} onChange={(event) => setDiet(event.target.value)} placeholder="Diet"/>
-                <input className="form-control" value={instagram} onChange={(event) => setInstagram(event.target.value)} placeholder="Social Media(s)"/>
+                <label>Political Affiliation:</label>
+                <input className="form-control" value={politics} onChange={(event) => setPolitic(event.target.value)} />
+                <label>Astrological Sign:</label>
+                <input className="form-control" value ={astr} onChange={(event) => setAstr(event.target.value)} />
+                <label>Diet:</label>
+                <input className="form-control" value={diet} onChange={(event) => setDiet(event.target.value)} />
+                <label>Social Media(s):</label>
+                <input className="form-control" value={instagram} onChange={(event) => setInstagram(event.target.value)} />
 
 
             <button className="btn btn-success" onClick={handleSubmit} > Add Your Profile </button>

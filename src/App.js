@@ -38,7 +38,7 @@ function App() {
       <Router>
         <Profile profiles={profiles} path='dashboard' />
         <ProfileForm addProfile={addProfile} path='/' />
-        <Feed path='feed' />
+        <Feed profiles={profiles}path='feed' />
       </Router>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Profile from "./components/Profile"
 import ProfileForm from "./components/ProfileForm"
+import Navbar from "./components/Navbar"
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -34,6 +35,7 @@ function App() {
  
   return (
     <div className="container">
+      <Navbar/>
      <h1 className="Title"> Lion-Link </h1>
       <div className="row">
       <div className="col-sm-4">

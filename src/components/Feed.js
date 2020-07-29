@@ -28,6 +28,7 @@ export default function Feed({ profiles }) {
 
   return (
     <div>
+      <h2 className='feed-form-header'> Update Your Status </h2>
       <FeedForm addStatus={addStatus} />
       <ul className='list-unstyled'>
         {statuses &&

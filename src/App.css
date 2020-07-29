@@ -7,10 +7,21 @@
   margin: 0;
 }
 
+.feed-form-header,
 .profile-form-header {
   color: #0076a5;
   margin-top: 10px;
+  margin-bottom: 17px;
 }
+
+.bg-cover {
+  background-attachment: static;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 500px;
+  height: 660px;
+}
+
 .header {
   text-align: center;
 }
@@ -49,5 +60,8 @@ ul {
 }
 
 .card-text.profile-text {
-  line-height: 1.5em;
+  line-height: 1.3em;
+}
+
+.container {
 }

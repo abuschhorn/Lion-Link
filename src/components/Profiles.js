@@ -20,7 +20,7 @@ export default function Profiles({ profiles }) {
   }, []);
 
   return (
-    <div className='row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row'>
+    <div className='row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row'>
       {userProfiles &&
         userProfiles.map((profile) => {
           return (

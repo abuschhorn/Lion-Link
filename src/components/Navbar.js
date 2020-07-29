@@ -11,6 +11,11 @@ export default function Navbar() {
 
       <ul className='justify-content-end nav'>
         <li className='nav-item'>
+          <Link to='create-profile' className='nav-link'>
+            Create Profile
+          </Link>
+        </li>
+        <li className='nav-item'>
           <Link to='feed' className='nav-link'>
             Feed
           </Link>

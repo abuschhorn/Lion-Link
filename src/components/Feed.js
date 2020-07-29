@@ -23,18 +23,12 @@ export default function Feed({ profiles }) {
         {statuses &&
           statuses.map((status) => (
             <li className='media'>
-<<<<<<< HEAD
-              <div class='media-body'>
-                <h5 class='mt-0 mb-1'>{status.userName}</h5>
-                {status.createdAt.toDateString()} {status.message}
-=======
               <div class='media-body card'>
                 <h5 class='mt-0 mb-1'>{status.userName}</h5>
                 <div className='status-date'>
                   {status.createdAt.toDateString()}
                 </div>
                 {status.message}
->>>>>>> 37b9cdf7b6fb78d5f14795d022a5ceac63b9737f
               </div>
             </li>
           ))}

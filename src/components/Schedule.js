@@ -6,7 +6,7 @@ export default function Schedule ({classes}) {
             <ul>
                 {classes && classes.map((newClass) => {
                 return(
-                    <li>{newClass.className}, {newClass.profName}</li>
+                    <li key={newClass.className}>{newClass.className}, {newClass.profName}</li>
                 )
                 
 })}

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "@reach/router";
 import ScheduleForm from "./ScheduleForm"
 import Schedule from "./Schedule"
+import {firestore} from "../firebase.util"
 
 export default function PublicForm({ addProfile }) {
   const [fName, setFName] = useState("");
@@ -21,6 +22,32 @@ export default function PublicForm({ addProfile }) {
   const [instagram, setInstagram] = useState("");
   const navigate = useNavigate();
 
+useEffect( () => {
+    firestore.collection("users").add({
+    fName: fName,
+    lName: lName,
+    pronouns: pronouns,
+    city: city,
+    state: state,
+    major: major,
+    minor: minor,
+    interest: interest,
+    schedule: schedule,
+    religion: religion,
+    sexuality: sexuality,
+    politics: politics,
+    astr: astr,
+    diet: diet,
+    instagram: instagram
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
+}, [])
+
   const addClass = (newClass) => {
       const newClasses = [...schedule, newClass]
       setSchedule(newClasses)
@@ -28,24 +55,43 @@ export default function PublicForm({ addProfile }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addProfile({
-      fName: fName,
-      lName: lName,
-      pronouns: pronouns,
-      city: city,
-      state: state,
-      major: major,
-      minor: minor,
-      interest: interest,
-      schedule: schedule,
-      religion: religion,
-      sexuality: sexuality,
-      politics: politics,
-      astr: astr,
-      diet: diet,
-      instagram: instagram,
-    });
-    setFName("");
+    // addProfile({
+    //   fName: fName,
+    //   lName: lName,
+    //   pronouns: pronouns,
+    //   city: city,
+    //   state: state,
+    //   major: major,
+    //   minor: minor,
+    //   interest: interest,
+    //   schedule: schedule,
+    //   religion: religion,
+    //   sexuality: sexuality,
+    //   politics: politics,
+    //   astr: astr,
+    //   diet: diet,
+    //   instagram: instagram,
+    // });
+    firestore.collection("users").add({
+        fName: fName,
+        lName: lName,
+        pronouns: pronouns,
+        city: city,
+        state: state,
+        major: major,
+        minor: minor,
+        interest: interest,
+        schedule: schedule,
+        religion: religion,
+        sexuality: sexuality,
+        politics: politics,
+        astr: astr,
+        diet: diet,
+        instagram: instagram
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        setFName("");
     setLName("");
     setPronouns("");
     setCity("");
@@ -61,6 +107,27 @@ export default function PublicForm({ addProfile }) {
     setDiet("");
     setInstagram("");
     navigate("/");
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+
+    });
+    // setFName("");
+    // setLName("");
+    // setPronouns("");
+    // setCity("");
+    // setState("");
+    // setMajor("");
+    // setMinor([]);
+    // setInterest([]);
+    // setSchedule([]);
+    // setReligion("");
+    // setSexuality("");
+    // setPolitic("");
+    // setAstr("");
+    // setDiet("");
+    // setInstagram("");
+    // navigate("/");
   };
 
   return (

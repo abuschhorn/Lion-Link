@@ -47,3 +47,7 @@ ul {
 .status-date {
   font-style: italic;
 }
+
+.card-text.profile-text {
+  line-height: 1.5em;
+}

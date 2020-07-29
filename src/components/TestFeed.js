@@ -8,22 +8,6 @@ export default function Feed({ profiles }) {
   const [message, setMessage] = useState("");
   const [statuses, setStatuses] = useState([]);
 
-  useEffect(() => {
-    firestore
-      .collection("statuses")
-      .orderBy("createdAt", "desc")
-      .get()
-      .then(function (querySnapshot) {
-        let statusData = [];
-        querySnapshot.forEach(function (doc) {
-          statusData.push({ id: doc.id, ...doc.data() });
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-        });
-        setStatuses(statusData);
-      });
-  }, []);
-
   const addStatus = (status) => {
     const tempStatus = [status, ...statuses];
     setStatuses(tempStatus);

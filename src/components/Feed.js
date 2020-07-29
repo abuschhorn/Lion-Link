@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FeedForm from "./FeedForm";
+import moment from "moment";
+import { firestore } from "../firebase.util";
 
 export default function Feed({ profiles }) {
-  const [statuses, setStatuses] = useState([
-    {
-      userName: "Troy",
-      message:
-        "this is a message this is a message this is a message this is a messagethis is a message this is a message",
-      createdAt: new Date(),
-    },
-  ]);
+  const [statuses, setStatuses] = useState([]);
+
+  useEffect(() => {
+    firestore
+      .collection("statuses")
+      .orderBy("createdAt", "desc")
+      .onSnapshot(function (querySnapshot) {
+        let statusData = [];
+        querySnapshot.forEach(function (doc) {
+          statusData.push({ id: doc.id, ...doc.data() });
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+        });
+        setStatuses(statusData);
+      });
+  }, []);
 
   const addStatus = (status) => {
     const tempStatus = [status, ...statuses];
@@ -26,9 +36,8 @@ export default function Feed({ profiles }) {
               <div class='media-body card-body'>
                 <h5 class='mt-0 mb-1 card-title'>{status.userName}</h5>
                 <div className='status-date'>
-                  {status.createdAt.toDateString()}
+                  {moment(status.createdAt.toDate()).fromNow()}
                 </div>
-
                 {status.message}
               </div>
             </li>

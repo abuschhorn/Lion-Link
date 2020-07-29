@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { firestore } from "../firebase.util";
 
 export default function FeedForm({ addStatus }) {
   const [userName, setUserName] = useState("");
@@ -6,9 +7,23 @@ export default function FeedForm({ addStatus }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addStatus({ userName, createdAt: new Date(), message });
-    setUserName("");
-    setMessage("");
+    // addStatus({ userName, createdAt: new Date(), message });
+    // Add a new document in collection "cities"
+    firestore
+      .collection("statuses")
+      .add({
+        userName: userName,
+        message: message,
+        createdAt: new Date(),
+      })
+      .then(function () {
+        console.log("Document successfully written!");
+        setUserName("");
+        setMessage("");
+      })
+      .catch(function (error) {
+        console.error("Error writing document: ", error);
+      });
   };
   return (
     <div>

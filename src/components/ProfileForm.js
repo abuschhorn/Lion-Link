@@ -74,8 +74,8 @@ export default function PublicForm({ addProfile }) {
 
   return (
     <div>
+      <h2 className='profile-form-header'> Create Profile </h2>
       <form onSubmit={handleSubmit}>
-        {/* <p>Required: </p> */}
         <div className='row'>
           <div className='col-sm-6'>
             <label>First Name:</label>
@@ -103,8 +103,7 @@ export default function PublicForm({ addProfile }) {
           id='select1'
           onChange={(event) => {
             setPronouns(event.target.value);
-          }}
-        >
+          }}>
           <option>Prefer Not to Say</option>
           <option>she/her</option>
           <option>he/him</option>

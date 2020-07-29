@@ -22,12 +22,13 @@ export default function Feed({ profiles }) {
       <ul className='list-unstyled'>
         {statuses &&
           statuses.map((status) => (
-            <li className='media'>
-              <div class='media-body card'>
-                <h5 class='mt-0 mb-1'>{status.userName}</h5>
+            <li className='media card'>
+              <div class='media-body card-body'>
+                <h5 class='mt-0 mb-1 card-title'>{status.userName}</h5>
                 <div className='status-date'>
                   {status.createdAt.toDateString()}
                 </div>
+
                 {status.message}
               </div>
             </li>

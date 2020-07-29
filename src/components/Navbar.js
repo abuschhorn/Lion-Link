@@ -6,13 +6,7 @@ export default function Navbar() {
   return (
     <nav className='navbar'>
       <Link to='/' className='navbar-brand'>
-        <img
-          src={Logo}
-          width='88'
-          height='88'
-          alt=''
-          loading='lazy'
-        />
+        <img src={Logo} width='88' height='88' alt='' loading='lazy' />
       </Link>
 
       <ul className='justify-content-end nav'>

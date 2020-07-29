@@ -26,3 +26,12 @@ ul {
 .button {
   background-color: rgb(220, 0, 0);
 }
+
+#inlineFormInput {
+  margin-left: 20px;
+}
+
+.btn-add {
+  margin-bottom: 21px;
+  font-size: 1.3em;
+}

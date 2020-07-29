@@ -35,3 +35,11 @@ ul {
   font-size: 1.3em;
   outline: none;
 }
+
+.btn.btn-outline-danger {
+  margin-bottom: 20px;
+}
+
+.status-date {
+  font-style: italic;
+}

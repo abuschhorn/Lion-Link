@@ -15,7 +15,7 @@ export default function Navbar() {
         />
       </Link>
 
-      <ul className='navbar-nav'>
+      <ul className='justify-content-end nav'>
         <li className='nav-item'>
           <Link to='feed' className='nav-link'>
             Feed

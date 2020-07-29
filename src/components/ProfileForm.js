@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "@reach/router";
+import ScheduleForm from "./ScheduleForm"
 import Schedule from "./Schedule"
 
 export default function PublicForm({ addProfile }) {
@@ -147,7 +148,8 @@ export default function PublicForm({ addProfile }) {
           onChange={(event) => setInterest(event.target.value)}
         />
         <label>Class Schedule:</label>
-        <Schedule addClass = {addClass}/>
+        <Schedule classes={schedule}/>
+        <ScheduleForm addClass = {addClass}/>
         <h5>Optional:</h5>
         <label>Religion:</label>
 

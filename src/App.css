@@ -22,7 +22,9 @@
 ul {
   list-style: none;
 }
+.card {
+  margin-bottom: 30px
 
-.button {
-  background-color: rgb(220, 0, 0);
 }
+a{color: #ab0c2f;}
+a:hover {color: #611122}

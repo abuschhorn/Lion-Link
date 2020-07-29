@@ -5,6 +5,7 @@ import Feed from "./components/Feed";
 import Dashboard from "./components/Dashboard";
 import "./App.css";
 import { Router, Link } from "@reach/router";
+import TestFeed from "./components/TestFeed";
 
 function App() {
   const [profiles, setProfiles] = useState([

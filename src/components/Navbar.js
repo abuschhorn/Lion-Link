@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 
 export default function Navbar() {
   return (
-    <nav className='navbar navbar-light bg-light'>
+    <nav className='navbar navbar-light'>
       <Link to='/' className='navbar-brand'>
         <img src={Logo} width='180' height='70' alt='' loading='lazy' />
       </Link>

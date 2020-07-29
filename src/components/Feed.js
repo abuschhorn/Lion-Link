@@ -7,7 +7,7 @@ export default function Feed({ profiles }) {
   const [statuses, setStatuses] = useState([]);
 
   useEffect(() => {
-    firestore
+    const unsubscribe = firestore
       .collection("statuses")
       .orderBy("createdAt", "desc")
       .onSnapshot(function (querySnapshot) {
@@ -19,6 +19,7 @@ export default function Feed({ profiles }) {
         });
         setStatuses(statusData);
       });
+    return () => unsubscribe();
   }, []);
 
   const addStatus = (status) => {

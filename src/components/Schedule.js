@@ -7,7 +7,7 @@ export default function Schedule({ classes }) {
           classes.map((newClass) => {
             return (
               <li key={newClass.className}>
-                {newClass.className}, {newClass.profName}
+                {newClass.className},{newClass.profName}
               </li>
             );
           })}

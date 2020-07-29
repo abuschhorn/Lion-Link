@@ -22,34 +22,6 @@ export default function PublicForm({ addProfile }) {
   const [instagram, setInstagram] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    firestore
-      .collection("users")
-      .add({
-        fName: fName,
-        lName: lName,
-        pronouns: pronouns,
-        city: city,
-        state: state,
-        major: major,
-        minor: minor,
-        interest: interest,
-        schedule: schedule,
-        religion: religion,
-        sexuality: sexuality,
-        politics: politics,
-        astr: astr,
-        diet: diet,
-        instagram: instagram,
-      })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
-  }, []);
-
   const addClass = (newClass) => {
     const newClasses = [...schedule, newClass];
     setSchedule(newClasses);
@@ -57,23 +29,6 @@ export default function PublicForm({ addProfile }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // addProfile({
-    //   fName: fName,
-    //   lName: lName,
-    //   pronouns: pronouns,
-    //   city: city,
-    //   state: state,
-    //   major: major,
-    //   minor: minor,
-    //   interest: interest,
-    //   schedule: schedule,
-    //   religion: religion,
-    //   sexuality: sexuality,
-    //   politics: politics,
-    //   astr: astr,
-    //   diet: diet,
-    //   instagram: instagram,
-    // });
     firestore
       .collection("users")
       .add({
@@ -110,32 +65,16 @@ export default function PublicForm({ addProfile }) {
         setAstr("");
         setDiet("");
         setInstagram("");
-        navigate("/");
+        navigate("/dashboard");
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
-    // setFName("");
-    // setLName("");
-    // setPronouns("");
-    // setCity("");
-    // setState("");
-    // setMajor("");
-    // setMinor([]);
-    // setInterest([]);
-    // setSchedule([]);
-    // setReligion("");
-    // setSexuality("");
-    // setPolitic("");
-    // setAstr("");
-    // setDiet("");
-    // setInstagram("");
-    // navigate("/");
   };
 
   return (
     <div>
-      <div onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         {/* <p>Required: </p> */}
         <div className='row'>
           <div className='col-sm-6'>
@@ -158,13 +97,14 @@ export default function PublicForm({ addProfile }) {
         </div>
         {/* add pronouns */}
         {/* <input className="form-control" value={pronouns} onChange={(event) => setPronouns(event.target.value)} placeholder="Pronouns"/> */}
-        <label for='select1'>Pronouns: </label>
+        <label>Pronouns: </label>
         <select
-          class='form-control'
+          className='form-control'
           id='select1'
           onChange={(event) => {
             setPronouns(event.target.value);
-          }}>
+          }}
+        >
           <option>Prefer Not to Say</option>
           <option>she/her</option>
           <option>he/him</option>
@@ -264,7 +204,7 @@ export default function PublicForm({ addProfile }) {
           {" "}
           Add Your Profile{" "}
         </button>
-      </div>
+      </form>
     </div>
   );
 }

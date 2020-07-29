@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { firestore } from "../firebase.util";
 
 export default function Profiles({ profiles }) {
+  useEffect(() => {
+    firestore
+      .collection("users")
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+        });
+      });
+  }, []);
+
   return (
     <div className='row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row'>
       {profiles &&
@@ -23,14 +36,11 @@ export default function Profiles({ profiles }) {
                   </h6>
                   <hr />
                   Major: {profile.major}
-                  Minor: {profile.minor} Interest:{" "}
-                  {profile.interest}
-                  Schedule: {profile.schedule} Religion:{" "}
-                  {profile.religion}
-                  Sexuality: {profile.sexuality} Politics:{" "}
-                  {profile.politics}
-                  Astrology:{profile.astr} Diet: {profile.diet}{" "}
-                  Instagram: {profile.instagram}
+                  Minor: {profile.minor} Interest: {profile.interest}
+                  Schedule: {profile.schedule} Religion: {profile.religion}
+                  Sexuality: {profile.sexuality} Politics: {profile.politics}
+                  Astrology:{profile.astr} Diet: {profile.diet} Instagram:{" "}
+                  {profile.instagram}
                 </div>
               </div>
             </div>

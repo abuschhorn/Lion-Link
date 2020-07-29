@@ -3,11 +3,14 @@ import { useNavigate } from "@reach/router";
 import ScheduleForm from "./ScheduleForm";
 import Schedule from "./Schedule";
 import { firestore } from "../firebase.util";
+// import LionRed from "../profileImages/lion-red";
+import { Images } from "../profileImages/Images";
 
 export default function PublicForm({ addProfile }) {
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [pronouns, setPronouns] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [major, setMajor] = useState("");
@@ -103,7 +106,8 @@ export default function PublicForm({ addProfile }) {
           id='select1'
           onChange={(event) => {
             setPronouns(event.target.value);
-          }}>
+          }}
+        >
           <option>Prefer Not to Say</option>
           <option>she/her</option>
           <option>he/him</option>
@@ -111,6 +115,16 @@ export default function PublicForm({ addProfile }) {
           <option>ze/zir</option>
         </select>
         <hr />
+        <label>Profile Avatar:</label>
+        <select
+          className='form-control'
+          id='selectAv'
+          onChange={(event) => {
+            setAvatar(event.target.value);
+          }}
+        >
+          <Images />
+        </select>
         <div className='row'>
           <div className='col-sm-6'>
             <label>City: </label>

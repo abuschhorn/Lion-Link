@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "@reach/router";
-import Schedule from "./Schedule"
+import ScheduleForm from "./ScheduleForm";
+import Schedule from "./Schedule";
+import { firestore } from "../firebase.util";
 
 export default function PublicForm({ addProfile }) {
   const [fName, setFName] = useState("");
@@ -20,46 +22,115 @@ export default function PublicForm({ addProfile }) {
   const [instagram, setInstagram] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    firestore
+      .collection("users")
+      .add({
+        fName: fName,
+        lName: lName,
+        pronouns: pronouns,
+        city: city,
+        state: state,
+        major: major,
+        minor: minor,
+        interest: interest,
+        schedule: schedule,
+        religion: religion,
+        sexuality: sexuality,
+        politics: politics,
+        astr: astr,
+        diet: diet,
+        instagram: instagram,
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+  }, []);
+
   const addClass = (newClass) => {
-      const newClasses = [...schedule, newClass]
-      setSchedule(newClasses)
-  }
+    const newClasses = [...schedule, newClass];
+    setSchedule(newClasses);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addProfile({
-      fName: fName,
-      lName: lName,
-      pronouns: pronouns,
-      city: city,
-      state: state,
-      major: major,
-      minor: minor,
-      interest: interest,
-      schedule: schedule,
-      religion: religion,
-      sexuality: sexuality,
-      politics: politics,
-      astr: astr,
-      diet: diet,
-      instagram: instagram,
-    });
-    setFName("");
-    setLName("");
-    setPronouns("");
-    setCity("");
-    setState("");
-    setMajor("");
-    setMinor([]);
-    setInterest([]);
-    setSchedule([]);
-    setReligion("");
-    setSexuality("");
-    setPolitic("");
-    setAstr("");
-    setDiet("");
-    setInstagram("");
-    navigate("/");
+    // addProfile({
+    //   fName: fName,
+    //   lName: lName,
+    //   pronouns: pronouns,
+    //   city: city,
+    //   state: state,
+    //   major: major,
+    //   minor: minor,
+    //   interest: interest,
+    //   schedule: schedule,
+    //   religion: religion,
+    //   sexuality: sexuality,
+    //   politics: politics,
+    //   astr: astr,
+    //   diet: diet,
+    //   instagram: instagram,
+    // });
+    firestore
+      .collection("users")
+      .add({
+        fName: fName,
+        lName: lName,
+        pronouns: pronouns,
+        city: city,
+        state: state,
+        major: major,
+        minor: minor,
+        interest: interest,
+        schedule: schedule,
+        religion: religion,
+        sexuality: sexuality,
+        politics: politics,
+        astr: astr,
+        diet: diet,
+        instagram: instagram,
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        setFName("");
+        setLName("");
+        setPronouns("");
+        setCity("");
+        setState("");
+        setMajor("");
+        setMinor([]);
+        setInterest([]);
+        setSchedule([]);
+        setReligion("");
+        setSexuality("");
+        setPolitic("");
+        setAstr("");
+        setDiet("");
+        setInstagram("");
+        navigate("/");
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+    // setFName("");
+    // setLName("");
+    // setPronouns("");
+    // setCity("");
+    // setState("");
+    // setMajor("");
+    // setMinor([]);
+    // setInterest([]);
+    // setSchedule([]);
+    // setReligion("");
+    // setSexuality("");
+    // setPolitic("");
+    // setAstr("");
+    // setDiet("");
+    // setInstagram("");
+    // navigate("/");
   };
 
   return (
@@ -147,7 +218,8 @@ export default function PublicForm({ addProfile }) {
           onChange={(event) => setInterest(event.target.value)}
         />
         <label>Class Schedule:</label>
-        <Schedule addClass = {addClass}/>
+        <Schedule classes={schedule} />
+        <ScheduleForm addClass={addClass} />
         <h5>Optional:</h5>
         <label>Religion:</label>
 
@@ -188,9 +260,7 @@ export default function PublicForm({ addProfile }) {
           onChange={(event) => setInstagram(event.target.value)}
         />
 
-        <button
-          className='btn btn-danger'
-          onClick={handleSubmit}>
+        <button className='btn btn-danger' onClick={handleSubmit}>
           {" "}
           Add Your Profile{" "}
         </button>

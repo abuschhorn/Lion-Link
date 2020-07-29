@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Profiles({ profiles }) {
   return (
-    <div className='row-cols-sm-1 row-cols-md-3 row'>
+    <div className='row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row'>
       {profiles &&
         profiles.map((profile) => {
           return (

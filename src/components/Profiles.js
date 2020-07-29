@@ -40,12 +40,17 @@ export default function Profiles({ profiles }) {
                     {profile.city}, {profile.state}{" "}
                   </h6>
                   <hr />
-                  Major: {profile.major}
-                  Minor: {profile.minor} Interest: {profile.interest}
-                  Religion: {profile.religion}
-                  Sexuality: {profile.sexuality} Politics: {profile.politics}
-                  Astrology:{profile.astr} Diet: {profile.diet} Instagram:{" "}
-                  {profile.instagram}
+                  <div className='card-text profile-text'>
+                    <li>Major: {profile.major}</li>
+                    <li>Minor: {profile.minor}</li>
+                    <li>Interest: {profile.interest}</li>
+                    <li>Religion: {profile.religion} </li>
+                    <li> Sexuality: {profile.sexuality}</li>
+                    <li>Politics: {profile.politics}</li>
+                    <li>Astrology: {profile.astr}</li>
+                    <li>Diet: {profile.diet}</li>
+                    <li>Instagram: {profile.instagram} </li>
+                  </div>
                 </div>
               </div>
             </div>

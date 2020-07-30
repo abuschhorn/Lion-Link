@@ -113,7 +113,8 @@ export default function PublicForm({ addProfile }) {
               id='select1'
               onChange={(event) => {
                 setPronouns(event.target.value);
-              }}>
+              }}
+            >
               <option>Prefer Not to Say</option>
               <option>she/her</option>
               <option>he/him</option>
@@ -129,12 +130,24 @@ export default function PublicForm({ addProfile }) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item onChange={() => setAvatar(LionRed)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-red.png?alt=media&token=e54809fb-3d0e-4ea0-b313-c438cb91740e"
+                    )
+                  }
+                >
                   <Image src={LionRed} roundedCircle height='40' width='40' />{" "}
                   Red{" "}
                 </Dropdown.Item>
 
-                <Dropdown.Item onChange={() => setAvatar(LionOrange)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-orange.png?alt=media&token=1b24325c-e33a-4b0d-9234-f2c8c5ba13e4"
+                    )
+                  }
+                >
                   <Image
                     src={LionOrange}
                     roundedCircle
@@ -144,7 +157,13 @@ export default function PublicForm({ addProfile }) {
                   Orange{" "}
                 </Dropdown.Item>
 
-                <Dropdown.Item onChange={() => setAvatar(LionYellow)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-yellow.png?alt=media&token=b22ab6d0-17bd-47d5-8608-4e508aa217d6"
+                    )
+                  }
+                >
                   <Image
                     src={LionYellow}
                     roundedCircle
@@ -154,22 +173,46 @@ export default function PublicForm({ addProfile }) {
                   Yellow{" "}
                 </Dropdown.Item>
 
-                <Dropdown.Item onChange={() => setAvatar(LionGreen)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-green.png?alt=media&token=04ac61de-c5ea-4a76-b3bf-be32968e241a"
+                    )
+                  }
+                >
                   <Image src={LionGreen} roundedCircle height='40' width='40' />{" "}
                   Green{" "}
                 </Dropdown.Item>
 
-                <Dropdown.Item onChange={() => setAvatar(LionTeal)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-teal.png?alt=media&token=b0757597-a491-42ab-bec9-73ec15940e4e"
+                    )
+                  }
+                >
                   <Image src={LionTeal} roundedCircle height='40' width='40' />{" "}
                   Teal{" "}
                 </Dropdown.Item>
 
-                <Dropdown.Item onChange={() => setAvatar(LionBlue)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-blue.png?alt=media&token=5f6bd5f9-d8d8-4593-a70d-98c7e28ac971"
+                    )
+                  }
+                >
                   <Image src={LionBlue} roundedCircle height='40' width='40' />{" "}
                   Blue{" "}
                 </Dropdown.Item>
 
-                <Dropdown.Item onChange={() => setAvatar(LionPurple)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-purple.png?alt=media&token=629702aa-76ec-46e2-bc2d-0ac58063eb8a"
+                    )
+                  }
+                >
                   <Image
                     src={LionPurple}
                     roundedCircle
@@ -179,7 +222,13 @@ export default function PublicForm({ addProfile }) {
                   Purple{" "}
                 </Dropdown.Item>
 
-                <Dropdown.Item onChange={() => setAvatar(LionPink)}>
+                <Dropdown.Item
+                  onChange={() =>
+                    setAvatar(
+                      "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-pink.png?alt=media&token=d1b57211-474d-463f-a3ab-69fe883a614b"
+                    )
+                  }
+                >
                   <Image src={LionPink} roundedCircle height='40' width='40' />{" "}
                   Pink{" "}
                 </Dropdown.Item>

@@ -14,8 +14,7 @@ import LionPurple from "../profileImages/lion-purple.png";
 import LionPink from "../profileImages/lion-pink.png";
 
 export default function PublicForm({ addProfile }) {
-  const [fName, setFName] = useState("");
-  const [lName, setLName] = useState("");
+  const [name, setName] = useState("");
   const [pronouns, setPronouns] = useState("");
   const [avatar, setAvatar] = useState(null);
   const [city, setCity] = useState("");
@@ -42,8 +41,7 @@ export default function PublicForm({ addProfile }) {
     firestore
       .collection("users")
       .add({
-        fName: fName,
-        lName: lName,
+        name: name,
         pronouns: pronouns,
         city: city,
         state: state,
@@ -60,8 +58,7 @@ export default function PublicForm({ addProfile }) {
       })
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
-        setFName("");
-        setLName("");
+        setName("");
         setPronouns("");
         setCity("");
         setState("");
@@ -86,24 +83,14 @@ export default function PublicForm({ addProfile }) {
     <div>
       <h2 className='profile-form-header'> Create Profile </h2>
       <form onSubmit={handleSubmit}>
-        <div className='row'>
-          <div className='col-sm-6'>
-            <label>First Name:</label>
-            <input
-              required
-              className='form-control'
-              value={fName}
-              onChange={(event) => setFName(event.target.value)}
-            />
-          </div>
-          <div className='col-sm-6'>
-            <label>Last Name:</label>
-            <input
-              className='form-control'
-              value={lName}
-              onChange={(event) => setLName(event.target.value)}
-            />
-          </div>
+        <div className='row-12'>
+          <label>Full Name:</label>
+          <input
+            required
+            className='form-control'
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
         </div>
         <div className='row'>
           <div className='col-sm-6'>

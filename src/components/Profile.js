@@ -32,9 +32,7 @@ export default function Profile() {
   return (
     <div>
       <div className='row'>
-        <h1 className='display-4'>
-          {user.fName} {user.lName}
-        </h1>
+        <h1 className='display-4'>{user.name}</h1>
         <Image src={user.avatar} height='100' width='100' />
       </div>
       {user.pronouns}

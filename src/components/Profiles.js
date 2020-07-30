@@ -28,16 +28,13 @@ export default function Profiles({ profiles }) {
         userProfiles.map((profile) => {
           return (
             // own profile on left
-            <div className='col' key={profile.fName}>
+            <div className='col' key={profile.name}>
               <div
                 className='card profiles'
                 onClick={() => navigate(`/users/${profile.id}`)}
               >
                 <div className='card-body'>
-                  <h4 className='card-title'>
-                    {" "}
-                    {profile.fName} {profile.lName}{" "}
-                  </h4>
+                  <h4 className='card-title'> {profile.name} </h4>
                   <Image src={profile.avatar} height='30' width='30' />
                   <h5 className='card-subtitle mb-2 text-muted'>
                     {" "}

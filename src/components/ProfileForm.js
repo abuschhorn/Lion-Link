@@ -3,22 +3,21 @@ import { useNavigate } from "@reach/router";
 import ScheduleForm from "./ScheduleForm";
 import Schedule from "./Schedule";
 import { firestore } from "../firebase.util";
-// import LionRed from "../profileImages/lion-red";
-// import { Images } from "../profileImages/Images";
-// import LionRed from "../profileImages/lion-red.png";
-// import LionOrange from "../profileImages/lion-orange.png";
-// import LionYellow from "../profileImages/lion-yellow.png";
-// import LionGreen from "../profileImages/lion-green.png";
-// import LionTeal from "../profileImages/lion-teal.png";
-// import LionBlue from "../profileImages/lion-blue.png";
-// import LionPurple from "../profileImages/lion-purple.png";
-// import LionPink from "../profileImages/lion-pink.png";
+import { Dropdown, Image } from "react-bootstrap";
+import LionRed from "../profileImages/lion-red.png";
+import LionOrange from "../profileImages/lion-orange.png";
+import LionYellow from "../profileImages/lion-yellow.png";
+import LionGreen from "../profileImages/lion-green.png";
+import LionTeal from "../profileImages/lion-teal.png";
+import LionBlue from "../profileImages/lion-blue.png";
+import LionPurple from "../profileImages/lion-purple.png";
+import LionPink from "../profileImages/lion-pink.png";
 
 export default function PublicForm({ addProfile }) {
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [pronouns, setPronouns] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState(null);
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [major, setMajor] = useState("");
@@ -106,47 +105,89 @@ export default function PublicForm({ addProfile }) {
             />
           </div>
         </div>
-        {/* add pronouns */}
-        {/* <input className="form-control" value={pronouns} onChange={(event) => setPronouns(event.target.value)} placeholder="Pronouns"/> */}
-        <label>Pronouns: </label>
-        <select
-          className='form-control'
-          id='select1'
-          onChange={(event) => {
-            setPronouns(event.target.value);
-          }}
-        >
-          <option>Prefer Not to Say</option>
-          <option>she/her</option>
-          <option>he/him</option>
-          <option>they/them</option>
-          <option>ze/zir</option>
-        </select>
+        <div className='row'>
+          <div className='col-sm-6'>
+            <label>Pronouns: </label>
+            <select
+              className='form-control'
+              id='select1'
+              onChange={(event) => {
+                setPronouns(event.target.value);
+              }}>
+              <option>Prefer Not to Say</option>
+              <option>she/her</option>
+              <option>he/him</option>
+              <option>they/them</option>
+              <option>ze/zir</option>
+            </select>
+          </div>
+          <div className='col-sm-6'>
+            <label>Profile Avatar:</label>
+            <Dropdown>
+              <Dropdown.Toggle className='dropdown-toggle' id='dropdown-basic'>
+                Select...
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item onChange={() => setAvatar(LionRed)}>
+                  <Image src={LionRed} roundedCircle height='40' width='40' />{" "}
+                  Red{" "}
+                </Dropdown.Item>
+
+                <Dropdown.Item onChange={() => setAvatar(LionOrange)}>
+                  <Image
+                    src={LionOrange}
+                    roundedCircle
+                    height='40'
+                    width='40'
+                  />{" "}
+                  Orange{" "}
+                </Dropdown.Item>
+
+                <Dropdown.Item onChange={() => setAvatar(LionYellow)}>
+                  <Image
+                    src={LionYellow}
+                    roundedCircle
+                    height='40'
+                    width='40'
+                  />{" "}
+                  Yellow{" "}
+                </Dropdown.Item>
+
+                <Dropdown.Item onChange={() => setAvatar(LionGreen)}>
+                  <Image src={LionGreen} roundedCircle height='40' width='40' />{" "}
+                  Green{" "}
+                </Dropdown.Item>
+
+                <Dropdown.Item onChange={() => setAvatar(LionTeal)}>
+                  <Image src={LionTeal} roundedCircle height='40' width='40' />{" "}
+                  Teal{" "}
+                </Dropdown.Item>
+
+                <Dropdown.Item onChange={() => setAvatar(LionBlue)}>
+                  <Image src={LionBlue} roundedCircle height='40' width='40' />{" "}
+                  Blue{" "}
+                </Dropdown.Item>
+
+                <Dropdown.Item onChange={() => setAvatar(LionPurple)}>
+                  <Image
+                    src={LionPurple}
+                    roundedCircle
+                    height='40'
+                    width='40'
+                  />{" "}
+                  Purple{" "}
+                </Dropdown.Item>
+
+                <Dropdown.Item onChange={() => setAvatar(LionPink)}>
+                  <Image src={LionPink} roundedCircle height='40' width='40' />{" "}
+                  Pink{" "}
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+        </div>
         <hr />
-        <label>Profile Avatar:</label>
-        <select
-          className='form-control'
-          id='selectAv'
-          onChange={(event) => {
-            setAvatar(event.target.value);
-          }}
-        >
-          {/* <Images />
-          {images &&
-            images.map((image) => {
-              return (
-                <li>
-                  <img
-                    src={image}
-                    width='70'
-                    height='70'
-                    alt=''
-                    loading='lazy'
-                  />
-                </li>
-              );
-            })} */}
-        </select>
         <div className='row'>
           <div className='col-sm-6'>
             <label>City: </label>

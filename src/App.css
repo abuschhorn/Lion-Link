@@ -7,6 +7,18 @@
   margin: 0;
 }
 
+.dropdown-toggle.dropdown-toggle.btn.btn-primary {
+  border: 1px solid #ced4da;
+  background-color: transparent;
+  color: #495057;
+  width: 100%;
+  text-align: left;
+}
+
+/* .dropdown-toggle.dropdown-toggle.btn.btn-primary.dropdown-toggle::after {
+  text-align: right !important;
+} */
+
 .feed-form-header,
 .profile-form-header {
   color: #0076a5;

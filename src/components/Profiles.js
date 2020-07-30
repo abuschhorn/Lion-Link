@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { firestore } from "../firebase.util";
+import { Image } from "react-bootstrap";
 
 export default function Profiles({ profiles }) {
   const [userProfiles, setUserProfiles] = useState([]);
@@ -32,6 +33,7 @@ export default function Profiles({ profiles }) {
                     {" "}
                     {profile.fName} {profile.lName}{" "}
                   </h4>
+                  <Image src='../profileImages/lion-teal.png' />
                   <h5 className='card-subtitle mb-2 text-muted'>
                     {" "}
                     {profile.pronouns}{" "}

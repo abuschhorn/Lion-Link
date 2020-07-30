@@ -7,7 +7,7 @@ export default function HomePage() {
       <div
         className='bg-cover'
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(${bigLogo})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.6) 100%,rgba(255,255,255,0.9) 100%), url(${bigLogo})`,
         }}>
         <div className='container homepage'>
           <h1 className='display-4'> about </h1>

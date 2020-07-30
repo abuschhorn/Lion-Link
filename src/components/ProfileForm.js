@@ -4,7 +4,15 @@ import ScheduleForm from "./ScheduleForm";
 import Schedule from "./Schedule";
 import { firestore } from "../firebase.util";
 // import LionRed from "../profileImages/lion-red";
-import { Images } from "../profileImages/Images";
+// import { Images } from "../profileImages/Images";
+// import LionRed from "../profileImages/lion-red.png";
+// import LionOrange from "../profileImages/lion-orange.png";
+// import LionYellow from "../profileImages/lion-yellow.png";
+// import LionGreen from "../profileImages/lion-green.png";
+// import LionTeal from "../profileImages/lion-teal.png";
+// import LionBlue from "../profileImages/lion-blue.png";
+// import LionPurple from "../profileImages/lion-purple.png";
+// import LionPink from "../profileImages/lion-pink.png";
 
 export default function PublicForm({ addProfile }) {
   const [fName, setFName] = useState("");
@@ -123,7 +131,21 @@ export default function PublicForm({ addProfile }) {
             setAvatar(event.target.value);
           }}
         >
-          <Images />
+          {/* <Images />
+          {images &&
+            images.map((image) => {
+              return (
+                <li>
+                  <img
+                    src={image}
+                    width='70'
+                    height='70'
+                    alt=''
+                    loading='lazy'
+                  />
+                </li>
+              );
+            })} */}
         </select>
         <div className='row'>
           <div className='col-sm-6'>

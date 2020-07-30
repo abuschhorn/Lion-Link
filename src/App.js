@@ -5,7 +5,8 @@ import Feed from "./components/Feed";
 import Dashboard from "./components/Dashboard";
 import HomePage from "./components/HomePage";
 import "./App.css";
-import { Router, Link } from "@reach/router";
+import { Router, Link, useNavigate } from "@reach/router";
+import Profile from "./components/Profile";
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -21,6 +22,7 @@ function App() {
       <Router>
         <Dashboard profiles={profiles} path='dashboard' />
         <HomePage path='/' />
+        <Profile path='users/:userId' />
         <ProfileForm addProfile={addProfile} path='create-profile' />
         <Feed profiles={profiles} path='feed' />
       </Router>

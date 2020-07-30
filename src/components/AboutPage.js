@@ -9,7 +9,7 @@ export default function AboutPage() {
     <div>
       <div>
         <div className='card about-info'>
-          <h1 className='display-4'> about our vision: </h1>
+          <h1 className='display-4 about'> about our vision: </h1>
           <p className='lead'>
             {" "}
             “Lion-Link” is a virtual platform where incoming LMU students can

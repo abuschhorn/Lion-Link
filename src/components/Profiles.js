@@ -30,9 +30,8 @@ export default function Profiles({ profiles }) {
             // own profile on left
             <div className='col' key={profile.fName}>
               <div
-                className='card'
-                onClick={() => navigate(`/users/${profile.id}`)}
-              >
+                className='card profiles'
+                onClick={() => navigate(`/users/${profile.id}`)}>
                 <div className='card-body'>
                   <h4 className='card-title'>
                     {" "}

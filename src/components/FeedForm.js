@@ -26,19 +26,19 @@ export default function FeedForm({ addStatus }) {
       });
   };
   return (
-    <div>
+    <div className='card feedform'>
       <form onSubmit={handleSubmit}>
         <input
           className='form-control'
           value={userName}
           onChange={(event) => setUserName(event.target.value)}
-          placeholder='username here'
+          placeholder='Username'
         />
         <input
           className='form-control'
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          placeholder='Write here'
+          placeholder="What's on you mind?"
         />
 
         <button className='btn btn-outline-danger' onClick={handleSubmit}>

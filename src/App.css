@@ -10,9 +10,6 @@
 .display-4 {
   margin-bottom: 20px;
 }
-.card.about-info {
-  padding-left: 10px;
-}
 
 .dropdown-toggle.dropdown-toggle.btn.btn-primary {
   border: 1px solid #ced4da;
@@ -32,6 +29,12 @@
   margin-top: 10px;
   margin-bottom: 17px;
 }
+
+.display-4.about {
+  text-decoration: underline;
+  text-decoration-color: #ab0c2f;
+}
+
 .display-4 {
   text-decoration: underline;
   text-decoration-color: #ab0c2f;
@@ -63,8 +66,9 @@
 ul {
   list-style: none;
 }
-.card {
+.card.profiles {
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 a.nav-link {
@@ -100,13 +104,22 @@ a.nav-link:active {
   line-height: 1.3em;
 }
 
+.card.about-info {
+  margin-top: 15px;
+  padding-left: 10px;
+}
 .card.about {
-  margin-top: 20px;
   text-align: center;
   padding-top: 20px;
+  margin-top: 20px;
 }
 
 .about-bio {
   line-height: 1.3em;
-  padding-top: 15px;
+  padding-top: 10px;
+}
+
+.card.feedform {
+  padding: 20px 40px 0 40px;
+  margin-bottom: 25px;
 }

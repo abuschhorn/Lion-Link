@@ -103,7 +103,8 @@ export default function PublicForm({ addProfile }) {
           id='select1'
           onChange={(event) => {
             setPronouns(event.target.value);
-          }}>
+          }}
+        >
           <option>Prefer Not to Say</option>
           <option>she/her</option>
           <option>he/him</option>
@@ -201,13 +202,9 @@ export default function PublicForm({ addProfile }) {
 
         <button className='btn btn-danger' onClick={handleSubmit}>
           {" "}
-          Add Your Profile{" "}
+          Add Your Profile Here{" "}
         </button>
       </form>
     </div>
   );
 }
-
-/*
-
-*/

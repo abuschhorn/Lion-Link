@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { firestore } from "../firebase.util";
 import { Image } from "react-bootstrap";
+import { useNavigate } from "@reach/router";
 
 export default function Profiles({ profiles }) {
   const [userProfiles, setUserProfiles] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     firestore
@@ -27,7 +29,10 @@ export default function Profiles({ profiles }) {
           return (
             // own profile on left
             <div className='col' key={profile.fName}>
-              <div className='card'>
+              <div
+                className='card'
+                onClick={() => navigate(`/users/${profile.id}`)}
+              >
                 <div className='card-body'>
                   <h4 className='card-title'>
                     {" "}

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Feed from "./components/Feed";
 import Dashboard from "./components/Dashboard";
 import HomePage from "./components/HomePage";
+import AboutPage from "./components/AboutPage";
 import "./App.css";
 import { Router, Link } from "@reach/router";
 
@@ -23,6 +24,7 @@ function App() {
         <HomePage path='/' />
         <ProfileForm addProfile={addProfile} path='create-profile' />
         <Feed profiles={profiles} path='feed' />
+        <AboutPage path='about' />
       </Router>
     </div>
   );

@@ -7,6 +7,13 @@
   margin: 0;
 }
 
+.display-4 {
+  margin-bottom: 20px;
+}
+.card.about-info {
+  padding-left: 10px;
+}
+
 .dropdown-toggle.dropdown-toggle.btn.btn-primary {
   border: 1px solid #ced4da;
   background-color: transparent;
@@ -91,4 +98,15 @@ a.nav-link:active {
 
 .card-text.profile-text {
   line-height: 1.3em;
+}
+
+.card.about {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.about-bio {
+  line-height: 1.3em;
+  padding-top: 15px;
 }

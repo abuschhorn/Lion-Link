@@ -3,81 +3,13 @@ import ProfileForm from "./components/ProfileForm";
 import Navbar from "./components/Navbar";
 import Feed from "./components/Feed";
 import Dashboard from "./components/Dashboard";
+import HomePage from "./components/HomePage";
 import "./App.css";
 import { Router, Link } from "@reach/router";
 import TestFeed from "./components/TestFeed";
 
 function App() {
-  const [profiles, setProfiles] = useState([
-    {
-      fName: "Ashley",
-      lName: "Buschhorn",
-      pronouns: "she/her",
-      city: "Austin",
-      state: "TX",
-      major: "CS",
-      minor: "math",
-      interest: ["photography"],
-      schedule: ["CMSI 185", "MATH 248"],
-      religion: "Christian",
-      sexuality: "gay",
-      politics: "democrat",
-      astr: "cancer",
-      diet: null,
-      instagram: "@abuschhorn_19",
-    },
-    {
-      fName: "Ashley",
-      lName: "Buschhorn",
-      pronouns: "she/her",
-      city: "Austin",
-      state: "TX",
-      major: "CS",
-      minor: "math",
-      interest: ["photography"],
-      schedule: ["CMSI 185", "MATH 248"],
-      religion: "Christian",
-      sexuality: "gay",
-      politics: "democrat",
-      astr: "cancer",
-      diet: null,
-      instagram: "@abuschhorn_19",
-    },
-    {
-      fName: "Ashley",
-      lName: "Buschhorn",
-      pronouns: "she/her",
-      city: "Austin",
-      state: "TX",
-      major: "CS",
-      minor: "math",
-      interest: ["photography"],
-      schedule: ["CMSI 185", "MATH 248"],
-      religion: "Christian",
-      sexuality: "gay",
-      politics: "democrat",
-      astr: "cancer",
-      diet: null,
-      instagram: "@abuschhorn_19",
-    },
-    {
-      fName: "Ashley",
-      lName: "Buschhorn",
-      pronouns: "she/her",
-      city: "Austin",
-      state: "TX",
-      major: "CS",
-      minor: "math",
-      interest: ["photography"],
-      schedule: ["CMSI 185", "MATH 248"],
-      religion: "Christian",
-      sexuality: "gay",
-      politics: "democrat",
-      astr: "cancer",
-      diet: null,
-      instagram: "@abuschhorn_19",
-    },
-  ]);
+  const [profiles, setProfiles] = useState([]);
 
   const addProfile = (profile) => {
     const newProfiles = [...profiles, profile];
@@ -89,7 +21,8 @@ function App() {
       <Navbar />
       <Router>
         <Dashboard profiles={profiles} path='dashboard' />
-        <ProfileForm addProfile={addProfile} path='/' />
+        <HomePage path='/' />
+        <ProfileForm addProfile={addProfile} path='create-profile' />
         <Feed profiles={profiles} path='feed' />
       </Router>
     </div>

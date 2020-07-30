@@ -7,10 +7,28 @@
   margin: 0;
 }
 
+.feed-form-header,
 .profile-form-header {
   color: #0076a5;
   margin-top: 10px;
+  margin-bottom: 17px;
 }
+.display-4 {
+  text-decoration: underline;
+  text-decoration-color: #ab0c2f;
+}
+
+.container.homepage {
+  text-align: left;
+}
+.bg-cover {
+  background-attachment: static;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 660px;
+}
+
 .header {
   text-align: center;
 }
@@ -28,6 +46,17 @@ ul {
 }
 .card {
   margin-bottom: 30px;
+}
+
+a.nav-link {
+  color: #ab0c2f;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a.nav-link:hover,
+a.nav-link:active {
+  text-decoration: underline;
 }
 
 #inlineFormInput {
@@ -49,5 +78,5 @@ ul {
 }
 
 .card-text.profile-text {
-  line-height: 1.5em;
+  line-height: 1.3em;
 }

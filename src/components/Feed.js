@@ -7,7 +7,7 @@ export default function Feed({ profiles }) {
   const [statuses, setStatuses] = useState([]);
 
   useEffect(() => {
-    firestore
+    const unsubscribe = firestore
       .collection("statuses")
       .orderBy("createdAt", "desc")
       .onSnapshot(function (querySnapshot) {
@@ -19,6 +19,7 @@ export default function Feed({ profiles }) {
         });
         setStatuses(statusData);
       });
+    return () => unsubscribe();
   }, []);
 
   const addStatus = (status) => {
@@ -28,6 +29,7 @@ export default function Feed({ profiles }) {
 
   return (
     <div>
+      <h2 className='feed-form-header'> Update Your Status </h2>
       <FeedForm addStatus={addStatus} />
       <ul className='list-unstyled'>
         {statuses &&

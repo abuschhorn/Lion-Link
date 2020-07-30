@@ -202,7 +202,7 @@ export default function PublicForm({ addProfile }) {
 
         <button className='btn btn-danger' onClick={handleSubmit}>
           {" "}
-          Add Your Profile Here{" "}
+          Add Your Profile{" "}
         </button>
       </form>
     </div>

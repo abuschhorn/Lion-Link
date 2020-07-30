@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMatch } from "@reach/router";
 import { Spinner } from "react-bootstrap";
 import { firestore } from "../firebase.util";
+import { Image } from "react-bootstrap";
 
 export default function Profile() {
   const match = useMatch("/users/:userId");
@@ -13,7 +14,7 @@ export default function Profile() {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          console.log(doc.data());
+          //   console.log(doc.data());
           setUser(doc.data());
         }
       });
@@ -31,14 +32,14 @@ export default function Profile() {
   return (
     <div>
       <div className='row'>
-        {user.avatar}
         <h1 className='display-4'>
           {user.fName} {user.lName}
         </h1>
+        <Image src={user.avatar} height='100' width='100' />
       </div>
       {user.pronouns}
       {user.city} {user.state} {user.major} {user.minor} {user.interests}
-      {user.schedule} {user.religion} {user.sexuality} {user.politic}
+      {user.religion} {user.sexuality} {user.politic}
       {user.astr} {user.diet} {user.instagram}
     </div>
   );

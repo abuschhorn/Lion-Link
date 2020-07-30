@@ -33,7 +33,11 @@ export default function Profiles({ profiles }) {
                     {" "}
                     {profile.fName} {profile.lName}{" "}
                   </h4>
-                  <Image src='../profileImages/lion-teal.png' />
+                  <Image
+                    src='https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-blue.png?alt=media&token=5f6bd5f9-d8d8-4593-a70d-98c7e28ac971'
+                    height='30'
+                    width='30'
+                  />
                   <h5 className='card-subtitle mb-2 text-muted'>
                     {" "}
                     {profile.pronouns}{" "}

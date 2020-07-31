@@ -35,24 +35,26 @@ export default function Profile() {
         <div>
           <div className='row'>
             <h1 className='display-4'>{user.name}</h1>
+          </div>
+          <div className='row profile-image'>
             <Image src={user.avatar} height='100' width='100' />
           </div>
         </div>
         <ul>
           <hr />
           <div className='card-text profile-text'>
-            <li>profile user: {user.pronouns}</li>
-            <li>{user.city}</li>
-            <li>{user.state}</li>
-            <li>{user.major}</li>
-            <li>{user.minor}</li>
-            <li>{user.interests}</li>
-            <li>{user.religion}</li>
-            <li>{user.sexuality}</li>
-            <li>{user.politic}</li>
-            <li>{user.astr}</li>
-            <li>{user.diet}</li>
-            <li>{user.instagram}</li>
+            <li>{user.pronouns}</li>
+            <li>
+              {user.city}, {user.state}
+            </li>
+            <li>Major: {user.major}</li>
+            <li>Minor: {user.minor}</li>
+            <li>Religion: {user.religion}</li>
+            <li>Sexuality: {user.sexuality}</li>
+            <li>Politics: {user.politic}</li>
+            <li>Astrology: {user.astr}</li>
+            <li>Diet: {user.diet}</li>
+            <li>Instagram: {user.instagram}</li>
             <hr />
           </div>
         </ul>

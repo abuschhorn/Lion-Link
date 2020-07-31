@@ -128,3 +128,8 @@ a.nav-link:active {
 .btn.btn-danger {
   margin-bottom: 25px;
 }
+
+.row.profile-image {
+  position: relative;
+  left: 30px;
+}

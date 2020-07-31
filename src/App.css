@@ -109,8 +109,9 @@ a.nav-link:active {
   padding-left: 10px;
 }
 .card.about {
-  text-align: center;
+  text-align: left;
   padding-top: 20px;
+  padding-left: 10px;
   margin-top: 20px;
 }
 
@@ -121,5 +122,9 @@ a.nav-link:active {
 
 .card.feedform {
   padding: 20px 40px 0 40px;
+  margin-bottom: 25px;
+}
+
+.btn.btn-danger {
   margin-bottom: 25px;
 }

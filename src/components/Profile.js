@@ -32,13 +32,27 @@ export default function Profile() {
   return (
     <div>
       <div className='row'>
-        <h1 className='display-4'>{user.name}</h1>
-        <Image src={user.avatar} height='100' width='100' />
+        <div>
+          <div className='row'>
+            <h1 className='display-4'>{user.name}</h1>
+            <Image src={user.avatar} height='100' width='100' />
+          </div>
+        </div>
+        <ul>
+          <li>profile user: {user.pronouns}</li>
+          <li>{user.city}</li>
+          <li>{user.state}</li>
+          <li>{user.major}</li>
+          <li>{user.minor}</li>
+          <li>{user.interests}</li>
+          <li>{user.religion}</li>
+          <li>{user.sexuality}</li>
+          <li>{user.politic}</li>
+          <li>{user.astr}</li>
+          <li>{user.diet}</li>
+          <li>{user.instagram}</li>
+        </ul>
       </div>
-      {user.pronouns}
-      {user.city} {user.state} {user.major} {user.minor} {user.interests}
-      {user.religion} {user.sexuality} {user.politic}
-      {user.astr} {user.diet} {user.instagram}
     </div>
   );
 }

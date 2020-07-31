@@ -29,7 +29,11 @@ export default function AboutPage() {
             </Media>
             <Media.Body className='about-bio'>
               <h5>Ashley Buschorn</h5>
-              <p>Cras sit amet nibh libero,</p>
+              <p>
+                Ashley is an incoming computer science student at LMU from
+                Austin, Texas. She specializes in back-end and front-end
+                development.
+              </p>
             </Media.Body>
           </div>
         </div>
@@ -41,7 +45,11 @@ export default function AboutPage() {
             </Media>
             <Media.Body className='about-bio'>
               <h5>Troy Womack-Henderson</h5>
-              <p>Cras sit amet nibh libero,</p>
+              <p>
+                Troy is an incoming computer science student at LMU from Las
+                Vegas, Nevada. She specializes in graphic design and front-end
+                development.
+              </p>
             </Media.Body>
           </div>
         </div>
@@ -53,7 +61,11 @@ export default function AboutPage() {
             </Media>
             <Media.Body className='about-bio'>
               <h5>Lauren Amparo</h5>
-              <p>Cras sit amet nibh libero,</p>
+              <p>
+                Lauren is an incoming biology and computer science student at
+                LMU from Folsom, California. She specializes in CSS and
+                front-end development.
+              </p>
             </Media.Body>
           </div>
         </div>

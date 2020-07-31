@@ -27,7 +27,6 @@ export default function Profiles({ profiles }) {
       {userProfiles &&
         userProfiles.map((profile) => {
           return (
-            // own profile on left
             <div className='col' key={profile.name}>
               <div
                 className='card profiles'
@@ -58,8 +57,6 @@ export default function Profiles({ profiles }) {
                 </div>
               </div>
             </div>
-
-            // display other profiles on right
           );
         })}
     </div>

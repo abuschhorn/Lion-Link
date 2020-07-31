@@ -39,18 +39,22 @@ export default function Profile() {
           </div>
         </div>
         <ul>
-          <li>profile user: {user.pronouns}</li>
-          <li>{user.city}</li>
-          <li>{user.state}</li>
-          <li>{user.major}</li>
-          <li>{user.minor}</li>
-          <li>{user.interests}</li>
-          <li>{user.religion}</li>
-          <li>{user.sexuality}</li>
-          <li>{user.politic}</li>
-          <li>{user.astr}</li>
-          <li>{user.diet}</li>
-          <li>{user.instagram}</li>
+          <hr />
+          <div className='card-text profile-text'>
+            <li>profile user: {user.pronouns}</li>
+            <li>{user.city}</li>
+            <li>{user.state}</li>
+            <li>{user.major}</li>
+            <li>{user.minor}</li>
+            <li>{user.interests}</li>
+            <li>{user.religion}</li>
+            <li>{user.sexuality}</li>
+            <li>{user.politic}</li>
+            <li>{user.astr}</li>
+            <li>{user.diet}</li>
+            <li>{user.instagram}</li>
+            <hr />
+          </div>
         </ul>
       </div>
     </div>

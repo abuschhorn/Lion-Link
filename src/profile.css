@@ -1,0 +1,22 @@
+.card-body {
+  position: relative;
+}
+.card-subtitle.mb-2.text-muted {
+  z-index: 100;
+}
+.image {
+  position: absolute;
+  right: 5px;
+  top: 47px;
+}
+
+@media only screen and (max-width: 900px) {
+  .display-4 {
+    font-size: 2em !important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .display-4 {
+    font-size: 2.5em !important;
+  }
+}

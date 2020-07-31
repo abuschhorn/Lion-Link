@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { firestore } from "../firebase.util";
 import { Image } from "react-bootstrap";
 import { useNavigate } from "@reach/router";
+import "../profile.css";
 
 export default function Profiles({ profiles }) {
   const [userProfiles, setUserProfiles] = useState([]);
@@ -23,7 +24,7 @@ export default function Profiles({ profiles }) {
   }, []);
 
   return (
-    <div className='row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row'>
+    <div className='row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 row'>
       {userProfiles &&
         userProfiles.map((profile) => {
           return (
@@ -35,7 +36,14 @@ export default function Profiles({ profiles }) {
               >
                 <div className='card-body'>
                   <h4 className='card-title'> {profile.name} </h4>
-                  <Image src={profile.avatar} height='30' width='30' />
+                  <div className='image'>
+                    <Image
+                      style={{ marginBottom: "5px" }}
+                      src={profile.avatar}
+                      height='60'
+                      width='60'
+                    />
+                  </div>
                   <h5 className='card-subtitle mb-2 text-muted'>
                     {" "}
                     {profile.pronouns}{" "}

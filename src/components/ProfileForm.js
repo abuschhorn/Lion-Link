@@ -43,6 +43,7 @@ export default function PublicForm({ addProfile }) {
       .add({
         name: name,
         pronouns: pronouns,
+        avatar: avatar,
         city: city,
         state: state,
         major: major,
@@ -60,6 +61,7 @@ export default function PublicForm({ addProfile }) {
         console.log("Document written with ID: ", docRef.id);
         setName("");
         setPronouns("");
+        setAvatar(null);
         setCity("");
         setState("");
         setMajor("");
@@ -118,7 +120,7 @@ export default function PublicForm({ addProfile }) {
 
               <Dropdown.Menu>
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() =>
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-red.png?alt=media&token=e54809fb-3d0e-4ea0-b313-c438cb91740e"
                     )
@@ -129,11 +131,12 @@ export default function PublicForm({ addProfile }) {
                 </Dropdown.Item>
 
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() => {
+                    console.log("i am Headers");
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-orange.png?alt=media&token=1b24325c-e33a-4b0d-9234-f2c8c5ba13e4"
-                    )
-                  }
+                    );
+                  }}
                 >
                   <Image
                     src={LionOrange}
@@ -145,7 +148,7 @@ export default function PublicForm({ addProfile }) {
                 </Dropdown.Item>
 
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() =>
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-yellow.png?alt=media&token=b22ab6d0-17bd-47d5-8608-4e508aa217d6"
                     )
@@ -161,7 +164,7 @@ export default function PublicForm({ addProfile }) {
                 </Dropdown.Item>
 
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() =>
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-green.png?alt=media&token=04ac61de-c5ea-4a76-b3bf-be32968e241a"
                     )
@@ -172,7 +175,7 @@ export default function PublicForm({ addProfile }) {
                 </Dropdown.Item>
 
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() =>
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-teal.png?alt=media&token=b0757597-a491-42ab-bec9-73ec15940e4e"
                     )
@@ -183,7 +186,7 @@ export default function PublicForm({ addProfile }) {
                 </Dropdown.Item>
 
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() =>
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-blue.png?alt=media&token=5f6bd5f9-d8d8-4593-a70d-98c7e28ac971"
                     )
@@ -194,7 +197,7 @@ export default function PublicForm({ addProfile }) {
                 </Dropdown.Item>
 
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() =>
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-purple.png?alt=media&token=629702aa-76ec-46e2-bc2d-0ac58063eb8a"
                     )
@@ -210,7 +213,7 @@ export default function PublicForm({ addProfile }) {
                 </Dropdown.Item>
 
                 <Dropdown.Item
-                  onChange={() =>
+                  onClick={() =>
                     setAvatar(
                       "https://firebasestorage.googleapis.com/v0/b/lion-link-6800a.appspot.com/o/lion-pink.png?alt=media&token=d1b57211-474d-463f-a3ab-69fe883a614b"
                     )

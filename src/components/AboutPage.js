@@ -2,7 +2,7 @@ import React from "react";
 import { Media, Image } from "react-bootstrap";
 import Ashley from "../profileImages/aboutImages/ashley.jpg";
 import Troy from "../profileImages/aboutImages/troy.jpeg";
-import Lauren from "../profileImages/aboutImages/lauren.png";
+import Lauren from "../profileImages/aboutImages/lauren.JPG";
 
 export default function AboutPage() {
   return (

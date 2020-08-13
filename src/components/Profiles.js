@@ -48,7 +48,10 @@ export default function Profiles({ profiles }) {
                     {profile.pronouns}{" "}
                   </h5>
                   <h6 className='card-subtitle mb-2 text-muted'>
-                    {profile.city}, {profile.state}{" "}
+                    {profile.city}, {profile.state}
+                  </h6>
+                  <h6 className='card-subtitle mb-2 text-muted'>
+                    {profile.country}
                   </h6>
                   <hr />
                   <div className='card-text profile-text'>

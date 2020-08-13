@@ -1,7 +1,7 @@
 import React from "react";
 import { Media, Image } from "react-bootstrap";
-import Ashley from "../profileImages/aboutImages/ashley.png";
-import Troy from "../profileImages/aboutImages/troy.png";
+import Ashley from "../profileImages/aboutImages/ashley.jpg";
+import Troy from "../profileImages/aboutImages/troy.jpeg";
 import Lauren from "../profileImages/aboutImages/lauren.png";
 
 export default function AboutPage() {

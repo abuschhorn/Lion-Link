@@ -45,7 +45,7 @@ export default function Profile() {
           <div className='card-text profile-text'>
             <li>{user.pronouns}</li>
             <li>
-              {user.city}, {user.state}
+              {user.city}, {user.state} {user.country}
             </li>
             <li>Major: {user.major}</li>
             <li>Minor: {user.minor}</li>

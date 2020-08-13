@@ -18,6 +18,7 @@ export default function PublicForm({ addProfile }) {
   const [pronouns, setPronouns] = useState("");
   const [avatar, setAvatar] = useState(null);
   const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [major, setMajor] = useState("");
   const [minor, setMinor] = useState([]);
@@ -46,6 +47,7 @@ export default function PublicForm({ addProfile }) {
         avatar: avatar,
         city: city,
         state: state,
+        country: country,
         major: major,
         minor: minor,
         interest: interest,
@@ -64,6 +66,7 @@ export default function PublicForm({ addProfile }) {
         setAvatar(null);
         setCity("");
         setState("");
+        setCountry("");
         setMajor("");
         setMinor([]);
         setInterest([]);
@@ -228,7 +231,7 @@ export default function PublicForm({ addProfile }) {
         </div>
         <hr />
         <div className='row'>
-          <div className='col-sm-6'>
+          <div className='col-sm-4'>
             <label>City: </label>
             <input
               className='form-control'
@@ -236,12 +239,21 @@ export default function PublicForm({ addProfile }) {
               onChange={(event) => setCity(event.target.value)}
             />
           </div>
-          <div className='col-sm-6'>
+          <div className='col-sm-4'>
             <label>State:</label>
             <input
               className='form-control'
               value={state}
               onChange={(event) => setState(event.target.value)}
+            />
+            {/* add dropdown */}
+          </div>
+          <div className='col-sm-4'>
+            <label>Country:</label>
+            <input
+              className='form-control'
+              value={country}
+              onChange={(event) => setCountry(event.target.value)}
             />
             {/* add dropdown */}
           </div>

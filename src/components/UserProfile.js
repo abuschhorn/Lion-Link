@@ -14,9 +14,9 @@ export default function UserProfile() {
           width='60'
         />
         <p>
-          Major: Math Minor: CS Interest: Sushi Religion: Catholic Sexuality:
-          Straight Politics: Conservative Astrology: Scorpio Diet: Omnivore
-          Instagram: @johnny.doe
+          Major: Computer Science Minor: Math Interest: Photography Religion:
+          Christian Sexuality: Gay Politics: Democrat Astrology: Cancer Diet:
+          Omnivore Instagram: @abuschhorn_19
         </p>
       </div>
     </div>

@@ -107,6 +107,7 @@ export default function PublicForm({ addProfile }) {
                 setPronouns(event.target.value);
               }}
             >
+              <option>Select</option>
               <option>Prefer Not to Say</option>
               <option>she/her</option>
               <option>he/him</option>
@@ -118,7 +119,7 @@ export default function PublicForm({ addProfile }) {
             <label>Profile Avatar:</label>
             <Dropdown>
               <Dropdown.Toggle className='dropdown-toggle' id='dropdown-basic'>
-                Select...
+                Select
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -259,24 +260,143 @@ export default function PublicForm({ addProfile }) {
           </div>
         </div>
         <hr />
+
         <div className='row'>
           <div className='col-sm-6'>
             <label>Major: </label>
-            <input
+            <select
               className='form-control'
-              value={major}
-              onChange={(event) => setMajor(event.target.value)}
-            />
+              id='select1'
+              onChange={(event) => {
+                setMajor(event.target.value);
+              }}
+            >
+              <option>Select</option>
+              <option>African American Studies</option>
+              <option>Animation</option>
+              <option>Applied Mathematics</option>
+              <option>Applied Physics</option>
+              <option>Art History</option>
+              <option>Asian Pacific Studies</option>
+              <option>Biochemistry</option>
+              <option>Biology</option>
+              <option>Business Management</option>
+              <option>Chemistry</option>
+              <option>Chicana/o and Latina/o Studies</option>
+              <option>Civil Engineering</option>
+              <option>Classics and Archaeology</option>
+              <option>Communication Studies</option>
+              <option>Computer Science</option>
+              <option>Dance</option>
+              <option>Economics</option>
+              <option>Electrical Engineering</option>
+              <option>English</option>
+              <option>Entrepreneurship</option>
+              <option>Environmental Science</option>
+              <option>Environmental Studies</option>
+              <option>Film, Television, and Media Studies</option>
+              <option>Film and Television Production</option>
+              <option>Finance</option>
+              <option>French</option>
+              <option>Health and Human Sciences</option>
+              <option>History</option>
+              <option>Humanities</option>
+              <option>Information Systems and Business Analytics</option>
+              <option>International Relations</option>
+              <option>Journalism</option>
+              <option>Liberal Studies</option>
+              <option>Marketing</option>
+              <option>Mathematics</option>
+              <option>Mechanical Engineering</option>
+              <option>Modern Languages</option>
+              <option>Music</option>
+              <option>Philosophy</option>
+              <option>Physics</option>
+              <option>Political Science</option>
+              <option>Psychology</option>
+              <option>Recording Arts</option>
+              <option>Screenwriting</option>
+              <option>Sociology</option>
+              <option>Spanish</option>
+              <option>Studio Arts</option>
+              <option>Theater Arts</option>
+              <option>Theology</option>
+              <option>Urban Studies</option>
+              <option>Women and Gender Studies</option>
+            </select>
           </div>
+
           <div className='col-sm-6'>
-            <label>Minor:</label>
-            <input
+            <label>Minor: </label>
+            <select
               className='form-control'
-              value={minor}
-              onChange={(event) => setMinor(event.target.value)}
-            />
+              id='select1'
+              onChange={(event) => {
+                setMinor(event.target.value);
+              }}
+            >
+              <option>Select</option>
+              <option>N/A</option>
+              <option>Accounting</option>
+              <option>African American Studies</option>
+              <option>Animation</option>
+              <option>Applied Mathematics</option>
+              <option>Art History</option>
+              <option>Asian Pacific Studies</option>
+              <option>Asian Pacific American Studies</option>
+              <option>Biochemistry</option>
+              <option>Bioethics</option>
+              <option>Biology</option>
+              <option>Business Administration</option>
+              <option>Catholic Studies</option>
+              <option>Chemistry</option>
+              <option>Chicana/o and Latina/o Studies</option>
+              <option>Chinese</option>
+              <option>Classics and Archaeology</option>
+              <option>Computer Science</option>
+              <option>Dance</option>
+              <option>Economics</option>
+              <option>Education</option>
+              <option>Electrical Engineering</option>
+              <option>English</option>
+              <option>Environmental Science</option>
+              <option>Environmental Studies</option>
+              <option>Film, Television, and Media Studies</option>
+              <option>French</option>
+              <option>German</option>
+              <option>Global Economics</option>
+              <option>Health and Society</option>
+              <option>History</option>
+              <option>Humanities</option>
+              <option>International Documentary Production</option>
+              <option>International Relations</option>
+              <option>Irish Studies</option>
+              <option>Italian</option>
+              <option>Jewish Studies</option>
+              <option>Journalism</option>
+              <option>Modern Greek Studies</option>
+              <option>Music</option>
+              <option>Peace and Justice Studies</option>
+              <option>Philosophy</option>
+              <option>Physics</option>
+              <option>Political Science</option>
+              <option>Public Relations</option>
+              <option>Pure Mathematics</option>
+              <option>Psychology</option>
+              <option>Screenwriting</option>
+              <option>Secondary Education Mathematics</option>
+              <option>Sociology</option>
+              <option>Spanish</option>
+              <option>Special Education</option>
+              <option>Studio Arts</option>
+              <option>Theater Arts</option>
+              <option>Theology</option>
+              <option>Urban Studies</option>
+              <option>Women and Gender Studies</option>
+            </select>
           </div>
         </div>
+
         <hr />
         <label>Interests:</label>
         <input
@@ -301,7 +421,6 @@ export default function PublicForm({ addProfile }) {
           value={sexuality}
           onChange={(event) => setSexuality(event.target.value)}
         />
-        {/* lauren */}
         <label>Political Affiliation:</label>
         <input
           className='form-control'
@@ -320,7 +439,7 @@ export default function PublicForm({ addProfile }) {
           value={diet}
           onChange={(event) => setDiet(event.target.value)}
         />
-        <label>Social Media(s):</label>
+        <label>Instagram:</label>
         <input
           className='form-control'
           value={instagram}

@@ -130,3 +130,8 @@ a.nav-link:active {
   position: relative;
   left: 30px;
 }
+
+.feedback {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}

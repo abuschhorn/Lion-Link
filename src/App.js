@@ -8,6 +8,7 @@ import AboutPage from "./components/AboutPage";
 import "./App.css";
 import { Router, Link, useNavigate } from "@reach/router";
 import Profile from "./components/Profile";
+import Feedback from "./components/Feedback";
 
 function App() {
   const [profiles, setProfiles] = useState([]);

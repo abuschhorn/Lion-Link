@@ -19,9 +19,9 @@
   text-align: left;
 }
 
-/* .dropdown-toggle.dropdown-toggle.btn.btn-primary.dropdown-toggle::after {
-  text-align: right !important;
-} */
+.margin-left {
+  margin-left: 120px !important;
+}
 
 .feed-form-header,
 .profile-form-header {
@@ -40,9 +40,6 @@
   text-decoration-color: #ab0c2f;
 }
 
-.container.homepage {
-  text-align: left;
-}
 .bg-cover {
   background-attachment: static;
   background-position: center;

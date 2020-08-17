@@ -9,6 +9,7 @@ import "./App.css";
 import { Router, Link, useNavigate } from "@reach/router";
 import Profile from "./components/Profile";
 import Feedback from "./components/Feedback";
+import Login from "./components/Login";
 
 function App() {
   const [profiles, setProfiles] = useState([]);
@@ -28,6 +29,7 @@ function App() {
         <ProfileForm addProfile={addProfile} path='create-profile' />
         <Feed profiles={profiles} path='feed' />
         <AboutPage path='about' />
+        <Login path='login' />
       </Router>
     </div>
   );

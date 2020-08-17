@@ -15,11 +15,11 @@ export default function Navbar() {
             About
           </Link>
         </li>
-        <li className='nav-item'>
+        {/* <li className='nav-item'>
           <Link to='create-profile' className='nav-link'>
             Create Profile
           </Link>
-        </li>
+        </li> */}
         <li className='nav-item'>
           <Link to='feed' className='nav-link'>
             Feed

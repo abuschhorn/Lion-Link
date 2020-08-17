@@ -53,17 +53,16 @@ export default function Profiles({ profiles }) {
                   <h6 className='card-subtitle mb-2 text-muted'>
                     {profile.country}
                   </h6>
-                  <hr />
                   <div className='card-text profile-text'>
-                    <li>Major: {profile.major}</li>
-                    <li>Minor: {profile.minor}</li>
+                    <p>{profile.major}</p>
+                    {/* <li>Minor: {profile.minor}</li>
                     <li>Interest: {profile.interest}</li>
                     <li>Religion: {profile.religion} </li>
                     <li> Sexuality: {profile.sexuality}</li>
                     <li>Politics: {profile.politics}</li>
                     <li>Astrology: {profile.astr}</li>
                     <li>Diet: {profile.diet}</li>
-                    <li>Instagram: {profile.instagram} </li>
+                    <li>Instagram: {profile.instagram} </li> */}
                   </div>
                 </div>
               </div>

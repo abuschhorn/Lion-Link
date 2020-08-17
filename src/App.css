@@ -99,6 +99,9 @@ a.nav-link:active {
 
 .card-text.profile-text {
   line-height: 1.3em;
+  font-style: italic;
+  font-size: larger;
+  font-weight: 400;
 }
 
 .card.about-info {

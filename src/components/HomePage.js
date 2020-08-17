@@ -1,8 +1,13 @@
 import React from "react";
 import bigLogo from "../bigLogo.png";
 import Feedback from "./Feedback";
+import Login from "./Login";
+import { Router, Link, useNavigate } from "@reach/router";
+import { signInWithEmailAndPassword, auth } from "../firebase.util";
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div
@@ -12,12 +17,27 @@ export default function HomePage() {
         }}
       >
         <div className='container homepage'>
-          <button className='btn btn-danger'>LOGIN</button>
+          <button
+            className='btn btn-danger login'
+            onClick={() => navigate(`/login`)}
+          >
+            LOGIN
+          </button>
           <span class='glyphicon glyphicon-edit' aria-hidden='true'></span>
-          <button className='btn btn-danger margin-left'>CREATE PROFILE</button>
+          <button
+            className='btn btn-danger signUp'
+            onClick={() => navigate(`create-profile`)}
+          >
+            CREATE PROFILE
+          </button>
         </div>
       </div>
       <Feedback />
     </div>
   );
 }
+
+// className='btn btn-danger margin-left'
+//             id='signUpBtn'
+//             isEmailSignIn
+//             onClick={signInWithEmailAndPassword}

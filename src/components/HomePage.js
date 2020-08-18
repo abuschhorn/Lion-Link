@@ -23,10 +23,10 @@ export default function HomePage() {
           >
             LOGIN
           </button>
-          <span class='glyphicon glyphicon-edit' aria-hidden='true'></span>
+          <span className='glyphicon glyphicon-edit' aria-hidden='true'></span>
           <button
             className='btn btn-danger signUp'
-            onClick={() => navigate(`create-profile`)}
+            onClick={() => navigate(`/sign-up`)}
           >
             CREATE PROFILE
           </button>

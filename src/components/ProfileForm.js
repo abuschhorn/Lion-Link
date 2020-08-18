@@ -18,7 +18,7 @@ import LionBlue from "../profileImages/lion-blue.png";
 import LionPurple from "../profileImages/lion-purple.png";
 import LionPink from "../profileImages/lion-pink.png";
 
-export default function PublicForm({ addProfile }) {
+export default function PublicForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -44,35 +44,32 @@ export default function PublicForm({ addProfile }) {
     setSchedule(newClasses);
   };
 
+  console.log("auth", auth.currentUser);
   const handleSubmit = (event) => {
     event.preventDefault();
     firestore
-      .collection("users")
-      .add({
-        email: email,
-        password: password,
-        name: name,
-        pronouns: pronouns,
-        avatar: avatar,
-        city: city,
-        state: state,
-        country: country,
-        major: major,
-        minor: minor,
-        interest: interest,
-        schedule: schedule,
-        religion: religion,
-        sexuality: sexuality,
-        politics: politics,
-        astr: astr,
-        diet: diet,
-        instagram: instagram,
-      })
+      .doc(`users/${auth.currentUser.uid}`)
+      .set(
+        {
+          pronouns: pronouns,
+          avatar: avatar,
+          city: city,
+          state: state,
+          country: country,
+          major: major,
+          minor: minor,
+          interest: interest,
+          schedule: schedule,
+          religion: religion,
+          sexuality: sexuality,
+          politics: politics,
+          astr: astr,
+          diet: diet,
+          instagram: instagram,
+        },
+        { merge: true }
+      )
       .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        setEmail("");
-        setPassword("");
-        setName("");
         setPronouns("");
         setAvatar(null);
         setCity("");
@@ -102,34 +99,6 @@ export default function PublicForm({ addProfile }) {
         <form onSubmit={handleSubmit}>
           <div className='row'>
             <div className='col-sm-6'>
-              <label>Email: </label>
-              <input
-                className='form-control'
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </div>
-            <div className='col-sm-6'>
-              <label>Password: </label>
-              <input
-                className='form-control'
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className='row-12'>
-            <label>Full Name:</label>
-            <input
-              required
-              className='form-control'
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-            />
-          </div>
-          <div className='row'>
-            <div className='col-sm-6'>
               <label>Pronouns: </label>
               <select
                 className='form-control'
@@ -137,6 +106,7 @@ export default function PublicForm({ addProfile }) {
                 onChange={(event) => {
                   setPronouns(event.target.value);
                 }}
+                required
               >
                 <option></option>
                 <option>Prefer Not to Say</option>

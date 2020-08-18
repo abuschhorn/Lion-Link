@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProfileForm from "./components/ProfileForm";
 import Navbar from "./components/Navbar";
 import Feed from "./components/Feed";
@@ -10,14 +10,18 @@ import { Router, Link, useNavigate } from "@reach/router";
 import Profile from "./components/Profile";
 import Feedback from "./components/Feedback";
 import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import { auth } from "./firebase.util";
 
 function App() {
   const [profiles, setProfiles] = useState([]);
 
-  const addProfile = (profile) => {
-    const newProfiles = [...profiles, profile];
-    setProfiles(newProfiles);
-  };
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      console.log(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className='container'>
@@ -26,10 +30,11 @@ function App() {
         <Dashboard profiles={profiles} path='dashboard' />
         <HomePage path='/' />
         <Profile path='users/:userId' />
-        <ProfileForm addProfile={addProfile} path='create-profile' />
+        <ProfileForm path='create-profile' />
         <Feed profiles={profiles} path='feed' />
         <AboutPage path='about' />
         <Login path='login' />
+        <SignUp path='sign-up' />
       </Router>
     </div>
   );

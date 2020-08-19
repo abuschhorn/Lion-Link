@@ -11,6 +11,7 @@ import Profile from "./components/Profile";
 import Feedback from "./components/Feedback";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import SignOut from "./components/SignOut";
 import { auth } from "./firebase.util";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <AboutPage path='about' />
         <Login path='login' />
         <SignUp path='sign-up' />
+        <SignOut path='sign-out' />
       </Router>
     </div>
   );

@@ -3,7 +3,7 @@ import { useMatch, useNavigate } from "@reach/router";
 import { firestore, auth } from "../firebase.util";
 
 export default function SignUp() {
-  const match = useMatch(`sign-up`);
+  //   const match = useMatch(`sign-up`);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");

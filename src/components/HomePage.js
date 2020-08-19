@@ -16,7 +16,7 @@ export default function HomePage() {
           backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.6) 100%,rgba(255,255,255,0.9) 100%), url(${bigLogo})`,
         }}
       >
-        <div className='container homepage'>
+        {/* <div className='container homepage'>
           <button
             className='btn btn-danger login'
             onClick={() => navigate(`/login`)}
@@ -30,7 +30,7 @@ export default function HomePage() {
           >
             CREATE PROFILE
           </button>
-        </div>
+        </div> */}
       </div>
       <Feedback />
     </div>

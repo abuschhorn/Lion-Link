@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../NavBarLogo.png";
-import { Link, navigate } from "@reach/router";
+import { Link } from "@reach/router";
 import { auth } from "../firebase.util";
 
 export default function Navbar() {
@@ -26,33 +26,23 @@ export default function Navbar() {
             Dashboard
           </Link>
         </li>
-        <li className='nav-item login'>
+        {/* {auth && auth.currentUser ? ( */}
+        <li className='nav-item'>
           <Link to='login' className='nav-link'>
             Login
           </Link>
         </li>
-        <li className='nav-item signUp'>
+        <li className='nav-item'>
           <Link to='sign-up' className='nav-link'>
             Create Account
           </Link>
         </li>
+        <li className='nave-item'>
+          <Link to='sign-out' className='nav-link'>
+            Sign Out
+          </Link>
+        </li>
       </ul>
-
-      <button
-        className='btn btn-danger'
-        onClick={() => {
-          auth
-            .signOut()
-            .then(() => {
-              navigate("/");
-            })
-            .catch(() => {
-              return;
-            });
-        }}
-      >
-        Sign Out
-      </button>
     </nav>
   );
 }

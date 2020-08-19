@@ -3,16 +3,21 @@ import { useMatch, navigate } from "@reach/router";
 import { auth } from "../firebase.util";
 
 export default function Login() {
-  // const match = useMatch(`login`);
+  const match = useMatch(`login`);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
 
-    auth.signInWithEmailAndPassword(email, password).catch((error) => {
-      console.log(error.message);
-    });
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        navigate("dashboard");
+      })
+      .catch((error) => {
+        console.log("error");
+      });
   };
   return (
     <div>
@@ -31,9 +36,7 @@ export default function Login() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button className='btn btn-danger' onClick={navigate("dashboard")}>
-          Submit
-        </button>
+        <button className='btn btn-danger'>Submit</button>
       </form>
     </div>
   );

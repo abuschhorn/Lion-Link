@@ -2,12 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "@reach/router";
 import ScheduleForm from "./ScheduleForm";
 import Schedule from "./Schedule";
-import {
-  firestore,
-  signInWithGoogle,
-  auth,
-  signInWithEmailAndPassword,
-} from "../firebase.util";
+import { firestore, auth, signInWithEmailAndPassword } from "../firebase.util";
 import { Dropdown, Image } from "react-bootstrap";
 import LionRed from "../profileImages/lion-red.png";
 import LionOrange from "../profileImages/lion-orange.png";
@@ -19,9 +14,6 @@ import LionPurple from "../profileImages/lion-purple.png";
 import LionPink from "../profileImages/lion-pink.png";
 
 export default function PublicForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
   const [pronouns, setPronouns] = useState("");
   const [avatar, setAvatar] = useState(null);
   const [city, setCity] = useState("");
